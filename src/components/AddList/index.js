@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 
+import styles from 'components/AddList/list-add.module.css';
 import { addList } from 'store/actions/board/lists';
 
 const AddList = ({
     addList,
+    className,
 }) => {
     const [title, setTitle] = useState('');
 
@@ -19,6 +21,10 @@ const AddList = ({
     }
 
     const onSubmit = () => {
+        if (!title.length) {
+            return;
+        }
+
         addList({
             cards: [],
             title,
@@ -28,9 +34,9 @@ const AddList = ({
     };
 
     return (
-        <div>
-            <div>Title: <input type="text" value={title} onChange={onTitleChange} onKeyDown={onTitleKeyDown} /></div>
-            <div><button onClick={onSubmit}>Add List</button></div>
+        <div className={`${styles.list_add} ${className}`}>
+            <input type="text" value={title} onChange={onTitleChange} onKeyDown={onTitleKeyDown} />
+            <button onClick={onSubmit}>Add List</button>
         </div>
     );
 };

@@ -1,0 +1,13 @@
+.add_card {
+    display: flex;
+    align-items: stretch;
+}
+
+.add_card input {
+    max-width: 178px;
+    margin-right: 5px;
+}
+
+.add_card button {
+    flex-shrink: 0;
+}

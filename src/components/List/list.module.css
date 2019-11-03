@@ -1,0 +1,23 @@
+.list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 0 0 300px;
+    width: 300px;
+    max-height: calc(100% - 20px);
+    overflow-y: auto;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #131313;
+}
+
+.list + .list {
+    margin-left: 15px;
+}
+
+.title {
+    font-size: 1.9em;
+    text-align: center;
+    line-height: 1.2;
+    margin-bottom: 8px;
+}

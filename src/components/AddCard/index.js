@@ -1,12 +1,17 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 
+import styles from 'components/AddCard/add-card.module.css';
 import { addCard } from 'store/actions/board/cards';
 
 const AddCard = ({ listId, addCard }) => {
     const [title, setTitle] = useState('');
 
     const onAddCard = () => {
+        if (!title.length) {
+            return;
+        }
+
         addCard({
             card: {
                 title,
@@ -29,8 +34,8 @@ const AddCard = ({ listId, addCard }) => {
     }
 
     return (
-        <div>
-            <div>Title: <input onKeyDown={onTitleKeyDown} onChange={onTitleChange} value={title} /></div>
+        <div className={styles.add_card}>
+            <input onKeyDown={onTitleKeyDown} onChange={onTitleChange} value={title} />
             <button onClick={onAddCard}>Add Card</button>
         </div>
     )

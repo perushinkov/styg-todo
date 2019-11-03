@@ -1,0 +1,38 @@
+.lists {
+    display: flex;
+    position: relative;
+    height: calc(100vh - 68px);
+}
+
+.lists_inner {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow-x: scroll;
+}
+
+.lists_items {
+    display: flex;
+    align-items: flex-start;
+    height: calc(100% - 30px);
+    padding: 15px 0 15px 15px;
+}
+
+.add_list {
+    position: relative;
+}
+
+.list + .add_list {
+    margin-left: 15px;
+}
+
+.list + .add_list::after {
+    content: "";
+    display: block;
+    position: absolute;
+    right: -15px;
+    width: 15px;
+    height: 1px;
+}

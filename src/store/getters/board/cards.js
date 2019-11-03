@@ -1,7 +1,6 @@
 import * as R from 'ramda';
 
-const basePath = ['board', 'cards'];
-const prefixWithBase = R.concat(basePath);
+const prefixWithBase = R.concat(['board', 'cards']);
 
 export const getLastCardId = R.path(prefixWithBase(['lastId']));
 
